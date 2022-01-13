@@ -16,9 +16,4 @@ const Jupiter = ({ children }) => {
   )
 }
 
-// const Jupiter = () => {
-//   return <div>Hi Jupiter</div>
-{/* <JupiterProvider connection={connection} cluster="mainnet-beta" userPublicKey={wallet.publicKey}> */}
-// }
-
 export default Jupiter

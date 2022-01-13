@@ -17,19 +17,6 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
   const [tokenMap, setTokenMap] = useState<Map<string, TokenInfo>>(
     new Map()
   );
-  const [account, setAccount] = useState<any>()
-
-  const getAccountInfo = async () => {
-      // @ts-ignore
-      const data = await connection.getAccountInfo(new PublicKey(wallet.publicKey));
-      setAccount(data)  
-  }
-
-  useEffect(() => {
-    if(wallet.connected){
-      getAccountInfo()
-    }
-  }, [account])
 
   const [formValue, setFormValue] = useState<UseJupiterProps>({
     amount: 1,
@@ -95,7 +82,8 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
     <div>
       <div>
         <div>{wallet.publicKey?.toBase58()}</div>
-        <div>{account?.lamports} lamports</div>
+        <br />
+        <h4>Note: Token list is from mainnet and so does Jupiter SDK, <br /> so please use Testnet and proxy to dappio mainnet fork for testing in this site.</h4>
         <br />
         <label htmlFor="inputMint">
           Input token
@@ -117,7 +105,6 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
           {allTokenMints.map((tokenMint) => {
             return (
               <option key={tokenMint} value={tokenMint}>
-                {/* {tokenMint == "So11111111111111111111111111111111111111112" ? 'wSOL' : "xxx" } */}
                 {tokenMap.get(tokenMint)?.name || "unknown"}
               </option>
             );
@@ -146,11 +133,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
           {validOutputMints.map((tokenMint) => {
             return (
               <option key={tokenMint} value={tokenMint}>
-                {/* {tokenMint} */}
-                {/* {tokenMint ===} */}
                 {tokenMap.get(tokenMint)?.name || "unknown"}
-                {/* {tokenMint === "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v" ? 'usdc' : "xxx" } */}
-                {/* {} */}
               </option>
             );
           })}
