@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Wallet } from './WalletProvider'
+import Wallet from '../views/WalletProvider'
 
 const Home: NextPage = () => {
   return (

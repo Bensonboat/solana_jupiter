@@ -24,7 +24,7 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 
 import Jupiter from './Jupiter';
 import JupiterForm from  './JupiterForm'
-export const Wallet: FC = () => {
+const Wallet: FC = () => {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
     const network = WalletAdapterNetwork[RPC];
 
@@ -62,3 +62,4 @@ export const Wallet: FC = () => {
         </ConnectionProvider>
     );
 };
+export default Wallet

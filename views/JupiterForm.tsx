@@ -83,7 +83,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
       <div>
         <div>{wallet.publicKey?.toBase58()}</div>
         <br />
-        <h4>Note: Token list is from mainnet and so does Jupiter SDK, <br /> so please use Testnet and proxy to dappio mainnet fork for testing in this site.</h4>
+        <h4>Note: Token list is loaded from mainnet and so does Jupiter SDK, <br /> so please use Testnet and proxy to dappio mainnet fork for testing in this site.</h4>
         <br />
         <label htmlFor="inputMint">
           Input token
